@@ -10,10 +10,16 @@
 
     <!-- 导航按钮 -->
     <el-row style="margin: 30px 0;">
-      <el-col :span="24" style="text-align: center;">
+      <el-col :span="12" style="text-align: center;">
         <el-button type="primary" size="large" @click="showDemo = !showDemo">
           <el-icon><Star /></el-icon>
           {{ showDemo ? '隐藏' : '查看' }} Element Plus 组件示例
+        </el-button>
+      </el-col>
+      <el-col :span="12" style="text-align: center;">
+        <el-button type="success" size="large" @click="showSvgDemo = !showSvgDemo">
+          <el-icon><Picture /></el-icon>
+          {{ showSvgDemo ? '隐藏' : '查看' }} SVG 图标示例
         </el-button>
       </el-col>
     </el-row>
@@ -52,6 +58,9 @@
 
     <!-- Element Plus Demo 组件显示区域 -->
     <ElementPlusDemo v-if="showDemo" />
+
+    <!-- SVG Demo 组件显示区域 -->
+    <SvgDemo v-if="showSvgDemo" />
   </div>
 </template>
 
@@ -67,10 +76,12 @@ import { ref } from 'vue'
 
 // 导入组件
 import ElementPlusDemo from "./views/ElementPlusDemo.vue"
+import SvgDemo from "./views/SvgDemo.vue"
 
-// 创建响应式数据：控制是否显示 Element Plus 示例组件
+// 创建响应式数据：控制是否显示示例组件
 // ref 函数会将普通值包装成响应式对象，当值变化时，视图会自动更新
 const showDemo = ref(false)
+const showSvgDemo = ref(false)
 </script>
 
 

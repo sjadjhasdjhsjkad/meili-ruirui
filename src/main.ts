@@ -5,6 +5,10 @@ import 'element-plus/dist/index.css'     //引入element css 样式
 import zhCn from 'element-plus/es/locale/lang/zh-cn'  //配置element-plus 国际化
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
+import 'virtual:svg-icons-register'
+
+
+
 const app = createApp(App)   //获取应用实例对象
 
 //安装element-plus插件
