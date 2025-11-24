@@ -6,6 +6,7 @@
 <template>
   <!-- 这里可以放置你的 HTML 内容和 Vue 组件 -->
   <h1>APP根组件</h1>
+  <h2>SB-RUIRUI - FOR V2</h2>
 </template>
 
 <!--
