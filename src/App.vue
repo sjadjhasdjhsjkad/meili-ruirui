@@ -4,11 +4,55 @@
   当前是空的，可以添加 HTML 元素和其他 Vue 组件
 -->
 <template>
-  <!-- 这里可以放置你的 HTML 内容和 Vue 组件 -->
-  <h1>APP根组件</h1>
-  <h2>SB-RUIRUI - FOR V2</h2>
-  <HelloView></HelloView>
-  <hello-view></hello-view>
+  <div class="app-container">
+    <h1>APP根组件</h1>
+    <h2>SB-RUIRUI - FOR V2</h2>
+
+    <!-- 导航按钮 -->
+    <el-row style="margin: 30px 0;">
+      <el-col :span="24" style="text-align: center;">
+        <el-button type="primary" size="large" @click="showDemo = !showDemo">
+          <el-icon><Star /></el-icon>
+          {{ showDemo ? '隐藏' : '查看' }} Element Plus 组件示例
+        </el-button>
+      </el-col>
+    </el-row>
+
+    <!-- Element Plus 测试组件 -->
+    <el-divider content-position="left">基础测试</el-divider>
+
+    <el-row :gutter="20" class="test-row">
+      <el-col :span="12">
+        <el-card class="box-card">
+          <template #header>
+            <div class="card-header">
+              <span>按钮组件测试</span>
+            </div>
+          </template>
+          <el-button type="primary">主要按钮</el-button>
+          <el-button type="success">成功按钮</el-button>
+          <el-button type="warning">警告按钮</el-button>
+          <el-button type="danger">危险按钮</el-button>
+        </el-card>
+      </el-col>
+
+      <el-col :span="12">
+        <el-card class="box-card">
+          <template #header>
+            <div class="card-header">
+              <span>其他组件测试</span>
+            </div>
+          </template>
+          <el-tag type="success">标签组件</el-tag>
+          <el-icon><Star /></el-icon>
+          <el-progress :percentage="50" />
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <!-- Element Plus Demo 组件显示区域 -->
+    <ElementPlusDemo v-if="showDemo" />
+  </div>
 </template>
 
 <!--
@@ -18,8 +62,15 @@
   这里可以定义组件的响应式数据、方法、计算属性等
 -->
 <script lang="ts" setup>
+// 导入 Vue 3 的 ref 函数，用于创建响应式数据
+import { ref } from 'vue'
 
-import HelloView from "./views/HelloView.vue";
+// 导入组件
+import ElementPlusDemo from "./views/ElementPlusDemo.vue"
+
+// 创建响应式数据：控制是否显示 Element Plus 示例组件
+// ref 函数会将普通值包装成响应式对象，当值变化时，视图会自动更新
+const showDemo = ref(false)
 </script>
 
 
@@ -29,6 +80,31 @@ import HelloView from "./views/HelloView.vue";
   这样可以避免样式污染和冲突
 -->
 <style scoped>
+.app-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.test-row {
+  margin: 20px 0;
+}
+
+.box-card {
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.el-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 /*
   .logo 类的样式定义
   用于设置 logo 图片的基本样式

@@ -2,9 +2,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- **Start development server**: `pnpm dev` (runs Vite dev server)
-- **Build for production**: `pnpm build` (runs TypeScript compilation then Vite build)
-- **Preview production build**: `pnpm preview`
+- **Start development server**: `npm run dev` (runs Vite dev server)
+- **Build for production**: `npm run build` (runs TypeScript compilation then Vite build)
+- **Preview production build**: `npm run preview`
 
 ## Project Architecture
 
@@ -24,7 +24,7 @@ This is a Vue 3 + TypeScript + Vite project with the following structure:
 - **Vue 3**: Using Composition API with `<script setup>` syntax
 - **TypeScript**: Full TypeScript support with strict type checking
 - **Vite**: Build tool and development server
-- **pnpm**: Package manager (indicated by lock files and directory structure)
+- **npm**: Package manager (indicated by package-lock.json and directory structure)
 
 ## Development Notes
 
