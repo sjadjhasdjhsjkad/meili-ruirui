@@ -5,20 +5,24 @@
 -->
 <template>
   <div class="app-container">
-    <h1>APP根组件</h1>
+    <h1 class="bg-amber-300">APP根组件</h1>
     <h2>SB-RUIRUI - FOR V2</h2>
 
     <!-- 导航按钮 -->
     <el-row style="margin: 30px 0;">
       <el-col :span="12" style="text-align: center;">
-        <el-button type="primary" size="large" @click="showDemo = !showDemo">
-          <el-icon><Star /></el-icon>
+        <el-button size="large" type="primary" @click="showDemo = !showDemo">
+          <el-icon>
+            <Star/>
+          </el-icon>
           {{ showDemo ? '隐藏' : '查看' }} Element Plus 组件示例
         </el-button>
       </el-col>
       <el-col :span="12" style="text-align: center;">
-        <el-button type="success" size="large" @click="showSvgDemo = !showSvgDemo">
-          <el-icon><Picture /></el-icon>
+        <el-button size="large" type="success" @click="showSvgDemo = !showSvgDemo">
+          <el-icon>
+            <Picture/>
+          </el-icon>
           {{ showSvgDemo ? '隐藏' : '查看' }} SVG 图标示例
         </el-button>
       </el-col>
@@ -50,17 +54,19 @@
             </div>
           </template>
           <el-tag type="success">标签组件</el-tag>
-          <el-icon><Star /></el-icon>
-          <el-progress :percentage="50" />
+          <el-icon>
+            <Star/>
+          </el-icon>
+          <el-progress :percentage="50"/>
         </el-card>
       </el-col>
     </el-row>
 
     <!-- Element Plus Demo 组件显示区域 -->
-    <ElementPlusDemo v-if="showDemo" />
+    <ElementPlusDemo v-if="showDemo"/>
 
     <!-- SVG Demo 组件显示区域 -->
-    <SvgDemo v-if="showSvgDemo" />
+    <SvgDemo v-if="showSvgDemo"/>
   </div>
 </template>
 
@@ -72,7 +78,7 @@
 -->
 <script lang="ts" setup>
 // 导入 Vue 3 的 ref 函数，用于创建响应式数据
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 // 导入组件
 import ElementPlusDemo from "./views/ElementPlusDemo.vue"
