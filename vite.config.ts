@@ -25,4 +25,14 @@ export default defineConfig({
             '@': resolve(__dirname, 'src')
         }
     },
+    // scss全局变量配置
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: `
+          @use "@/styles/variables.scss" as *;
+        `
+            }
+        }
+    },
 })

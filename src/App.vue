@@ -13,7 +13,7 @@
       <el-col :span="12" style="text-align: center;">
         <el-button size="large" type="primary" @click="showDemo = !showDemo">
           <el-icon>
-            <Star/>
+
           </el-icon>
           {{ showDemo ? '隐藏' : '查看' }} Element Plus 组件示例
         </el-button>
@@ -21,7 +21,7 @@
       <el-col :span="12" style="text-align: center;">
         <el-button size="large" type="success" @click="showSvgDemo = !showSvgDemo">
           <el-icon>
-            <Picture/>
+
           </el-icon>
           {{ showSvgDemo ? '隐藏' : '查看' }} SVG 图标示例
         </el-button>
@@ -55,7 +55,7 @@
           </template>
           <el-tag type="success">标签组件</el-tag>
           <el-icon>
-            <Star/>
+
           </el-icon>
           <el-progress :percentage="50"/>
         </el-card>
@@ -96,11 +96,17 @@ const showSvgDemo = ref(false)
   scoped 表示这些样式只在当前组件内生效，不会影响其他组件
   这样可以避免样式污染和冲突
 -->
-<style scoped>
+<style lang="scss" scoped>
 .app-container {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+h2 {
+  color: $text-color;
+  padding: $padding-base;
+  background: $primary-color;
 }
 
 .test-row {
@@ -136,7 +142,7 @@ const showSvgDemo = ref(false)
 /*
   鼠标悬停在 .logo 元素上时的样式
   使用 drop-shadow 滤镜添加阴影效果
-  #646cffaa 是颜色值，最后两位 aa 表示透明度
+  #646clean 是颜色值，最后两位 aa 表示透明度
 */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa); /* 添加 2em 模糊半径的蓝色阴影 */
