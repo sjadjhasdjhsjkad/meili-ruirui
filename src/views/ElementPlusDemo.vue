@@ -20,7 +20,9 @@
     <el-card class="demo-section" shadow="hover">
       <template #header>
         <div class="section-header">
-          <el-icon><Star /></el-icon>
+          <el-icon>
+            <Star/>
+          </el-icon>
           <span>基础组件</span>
         </div>
       </template>
@@ -39,15 +41,17 @@
         <div class="sub-group">
           <h3>按钮 (Button)</h3>
           <el-button type="primary" @click="handleButtonClick">主要按钮</el-button>
-          <el-button type="success">成功按钮</el-button>
+          <el-button type="success" @click="abc">成功按钮</el-button>
           <el-button type="warning">警告按钮</el-button>
           <el-button type="danger">危险按钮</el-button>
           <el-button type="info">信息按钮</el-button>
-          <br />
+          <br/>
           <el-button plain>朴素按钮</el-button>
           <el-button round>圆角按钮</el-button>
           <el-button circle>
-            <el-icon><Search /></el-icon>
+            <el-icon>
+              <Search/>
+            </el-icon>
           </el-button>
           <el-button :loading="true">加载中</el-button>
           <el-button disabled>禁用按钮</el-button>
@@ -78,11 +82,11 @@
         -->
         <div class="sub-group">
           <h3>进度条 (Progress)</h3>
-          <el-progress :percentage="50" />
-          <el-progress :percentage="75" status="success" />
-          <el-progress :percentage="25" status="exception" />
-          <el-progress :percentage="90" status="warning" />
-          <el-progress :percentage="60" stroke-width="18" text-inside />
+          <el-progress :percentage="50"/>
+          <el-progress :percentage="75" status="success"/>
+          <el-progress :percentage="25" status="exception"/>
+          <el-progress :percentage="90" status="warning"/>
+          <el-progress :percentage="60" stroke-width="18" text-inside/>
         </div>
       </div>
     </el-card>
@@ -91,7 +95,9 @@
     <el-card class="demo-section" shadow="hover">
       <template #header>
         <div class="section-header">
-          <el-icon><Edit /></el-icon>
+          <el-icon>
+            <Edit/>
+          </el-icon>
           <span>表单组件</span>
         </div>
       </template>
@@ -103,7 +109,7 @@
         ref 属性：表单引用，用于获取表单实例
         label-width 属性：标签宽度
       -->
-      <el-form :model="formData" :rules="formRules" ref="formRef" label-width="120px">
+      <el-form ref="formRef" :model="formData" :rules="formRules" label-width="120px">
         <el-row :gutter="20">
           <el-col :span="12">
             <!--
@@ -117,20 +123,20 @@
             -->
             <el-form-item label="用户名" prop="username">
               <el-input
-                v-model="formData.username"
-                placeholder="请输入用户名"
-                clearable
-                prefix-icon="User"
+                  v-model="formData.username"
+                  clearable
+                  placeholder="请输入用户名"
+                  prefix-icon="User"
               />
             </el-form-item>
 
             <el-form-item label="密码" prop="password">
               <el-input
-                v-model="formData.password"
-                type="password"
-                placeholder="请输入密码"
-                show-password
-                prefix-icon="Lock"
+                  v-model="formData.password"
+                  placeholder="请输入密码"
+                  prefix-icon="Lock"
+                  show-password
+                  type="password"
               />
             </el-form-item>
 
@@ -144,16 +150,16 @@
             -->
             <el-form-item label="城市" prop="city">
               <el-select
-                v-model="formData.city"
-                placeholder="请选择城市"
-                clearable
-                filterable
+                  v-model="formData.city"
+                  clearable
+                  filterable
+                  placeholder="请选择城市"
               >
                 <el-option
-                  v-for="item in cityOptions"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value"
+                    v-for="item in cityOptions"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
                 />
               </el-select>
             </el-form-item>
@@ -168,11 +174,11 @@
             -->
             <el-form-item label="生日" prop="birthday">
               <el-date-picker
-                v-model="formData.birthday"
-                type="date"
-                placeholder="选择日期"
-                format="YYYY-MM-DD"
-                value-format="YYYY-MM-DD"
+                  v-model="formData.birthday"
+                  format="YYYY-MM-DD"
+                  placeholder="选择日期"
+                  type="date"
+                  value-format="YYYY-MM-DD"
               />
             </el-form-item>
           </el-col>
@@ -188,7 +194,7 @@
               <el-radio-group v-model="formData.gender">
                 <el-radio label="male">男</el-radio>
                 <el-radio label="female">女</el-radio>
-                <el-radio label="other" disabled>其他</el-radio>
+                <el-radio disabled label="other">其他</el-radio>
               </el-radio-group>
             </el-form-item>
 
@@ -204,7 +210,7 @@
                 <el-checkbox label="reading">阅读</el-checkbox>
                 <el-checkbox label="sports">运动</el-checkbox>
                 <el-checkbox label="music">音乐</el-checkbox>
-                <el-checkbox label="travel" disabled>旅游</el-checkbox>
+                <el-checkbox disabled label="travel">旅游</el-checkbox>
               </el-checkbox-group>
             </el-form-item>
 
@@ -219,9 +225,9 @@
             -->
             <el-form-item label="接收通知">
               <el-switch
-                v-model="formData.notification"
-                active-text="开启"
-                inactive-text="关闭"
+                  v-model="formData.notification"
+                  active-text="开启"
+                  inactive-text="关闭"
               />
             </el-form-item>
 
@@ -236,11 +242,11 @@
             -->
             <el-form-item label="年龄">
               <el-slider
-                v-model="formData.age"
-                :min="18"
-                :max="100"
-                :step="1"
-                show-tooltip
+                  v-model="formData.age"
+                  :max="100"
+                  :min="18"
+                  :step="1"
+                  show-tooltip
               />
             </el-form-item>
           </el-col>
@@ -256,12 +262,12 @@
         -->
         <el-form-item label="个人简介" prop="description">
           <el-input
-            v-model="formData.description"
-            type="textarea"
-            :rows="4"
-            placeholder="请输入个人简介"
-            maxlength="200"
-            show-word-limit
+              v-model="formData.description"
+              :rows="4"
+              maxlength="200"
+              placeholder="请输入个人简介"
+              show-word-limit
+              type="textarea"
           />
         </el-form-item>
 
@@ -278,7 +284,9 @@
     <el-card class="demo-section" shadow="hover">
       <template #header>
         <div class="section-header">
-          <el-icon><Grid /></el-icon>
+          <el-icon>
+            <Grid/>
+          </el-icon>
           <span>数据展示</span>
         </div>
       </template>
@@ -296,26 +304,26 @@
         <div class="sub-group">
           <h3>表格 (Table)</h3>
           <el-table
-            :data="tableData"
-            border
-            stripe
-            style="width: 100%"
-            @selection-change="handleSelectionChange"
+              :data="tableData"
+              border
+              stripe
+              style="width: 100%"
+              @selection-change="handleSelectionChange"
           >
             <!-- 多选列 -->
-            <el-table-column type="selection" width="55" />
+            <el-table-column type="selection" width="55"/>
 
             <!-- 索引列 -->
-            <el-table-column type="index" width="50" label="序号" />
+            <el-table-column label="序号" type="index" width="50"/>
 
             <!-- 普通列 -->
-            <el-table-column prop="name" label="姓名" width="120" />
+            <el-table-column label="姓名" prop="name" width="120"/>
 
             <!-- 带格式化的列 -->
-            <el-table-column prop="age" label="年龄" width="80" sortable />
+            <el-table-column label="年龄" prop="age" sortable width="80"/>
 
             <!-- 带自定义模板的列 -->
-            <el-table-column prop="gender" label="性别" width="80">
+            <el-table-column label="性别" prop="gender" width="80">
               <template #default="scope">
                 <el-tag :type="scope.row.gender === '男' ? 'primary' : 'success'">
                   {{ scope.row.gender }}
@@ -327,16 +335,16 @@
             <el-table-column label="操作" width="180">
               <template #default="scope">
                 <el-button
-                  size="small"
-                  type="primary"
-                  @click="handleEdit(scope.$index, scope.row)"
+                    size="small"
+                    type="primary"
+                    @click="handleEdit(scope.$index, scope.row)"
                 >
                   编辑
                 </el-button>
                 <el-button
-                  size="small"
-                  type="danger"
-                  @click="handleDelete(scope.$index, scope.row)"
+                    size="small"
+                    type="danger"
+                    @click="handleDelete(scope.$index, scope.row)"
                 >
                   删除
                 </el-button>
@@ -356,13 +364,13 @@
           -->
           <div class="pagination-container">
             <el-pagination
-              v-model:current-page="pagination.currentPage"
-              v-model:page-size="pagination.pageSize"
-              :page-sizes="[10, 20, 50, 100]"
-              :total="pagination.total"
-              layout="total, sizes, prev, pager, next, jumper"
-              @size-change="handleSizeChange"
-              @current-change="handleCurrentChange"
+                v-model:current-page="pagination.currentPage"
+                v-model:page-size="pagination.pageSize"
+                :page-sizes="[10, 20, 50, 100]"
+                :total="pagination.total"
+                layout="total, sizes, prev, pager, next, jumper"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
             />
           </div>
         </div>
@@ -373,7 +381,9 @@
     <el-card class="demo-section" shadow="hover">
       <template #header>
         <div class="section-header">
-          <el-icon><Bell /></el-icon>
+          <el-icon>
+            <Bell/>
+          </el-icon>
           <span>反馈组件</span>
         </div>
       </template>
@@ -398,7 +408,9 @@
     <el-card class="demo-section" shadow="hover">
       <template #header>
         <div class="section-header">
-          <el-icon><Menu /></el-icon>
+          <el-icon>
+            <Menu/>
+          </el-icon>
           <span>导航组件</span>
         </div>
       </template>
@@ -414,13 +426,15 @@
             -->
             <h3>菜单 (Menu)</h3>
             <el-menu
-              :default-active="activeMenu"
-              mode="vertical"
-              @select="handleMenuSelect"
+                :default-active="activeMenu"
+                mode="vertical"
+                @select="handleMenuSelect"
             >
               <el-sub-menu index="1">
                 <template #title>
-                  <el-icon><Setting /></el-icon>
+                  <el-icon>
+                    <Setting/>
+                  </el-icon>
                   <span>系统管理</span>
                 </template>
                 <el-menu-item index="1-1">用户管理</el-menu-item>
@@ -430,7 +444,9 @@
 
               <el-sub-menu index="2">
                 <template #title>
-                  <el-icon><Document /></el-icon>
+                  <el-icon>
+                    <Document/>
+                  </el-icon>
                   <span>内容管理</span>
                 </template>
                 <el-menu-item index="2-1">文章管理</el-menu-item>
@@ -463,9 +479,9 @@
   Vue 3 Composition API 脚本部分
   使用 <script setup> 语法糖，让代码更简洁
 -->
-<script setup lang="ts">
-import { ref, reactive } from 'vue';
-import { ElMessage, ElMessageBox, ElNotification } from 'element-plus';
+<script lang="ts" setup>
+import {ref, reactive} from 'vue';
+import {ElMessage, ElMessageBox, ElNotification} from 'element-plus';
 import {
   Edit,
   Search,
@@ -498,30 +514,30 @@ const activeMenu = ref('1-1')
 
 // 城市选择选项
 const cityOptions = [
-  { value: 'beijing', label: '北京' },
-  { value: 'shanghai', label: '上海' },
-  { value: 'guangzhou', label: '广州' },
-  { value: 'shenzhen', label: '深圳' },
-  { value: 'hangzhou', label: '杭州' },
-  { value: 'shandong', label: '山东' },
-  { value: 'chongqing', label: '重庆' }
+  {value: 'beijing', label: '北京'},
+  {value: 'shanghai', label: '上海'},
+  {value: 'guangzhou', label: '广州'},
+  {value: 'shenzhen', label: '深圳'},
+  {value: 'hangzhou', label: '杭州'},
+  {value: 'shandong', label: '山东'},
+  {value: 'chongqing', label: '重庆'}
 ]
 
 // 表单验证规则
 const formRules = reactive({
   username: [
-    { required: true, message: '请输入用户名', trigger: 'blur' },
-    { min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur' }
+    {required: true, message: '请输入用户名', trigger: 'blur'},
+    {min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur'}
   ],
   password: [
-    { required: true, message: '请输入密码', trigger: 'blur' },
-    { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
+    {required: true, message: '请输入密码', trigger: 'blur'},
+    {min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur'}
   ],
   city: [
-    { required: true, message: '请选择城市', trigger: 'change' }
+    {required: true, message: '请选择城市', trigger: 'change'}
   ],
   birthday: [
-    { required: true, message: '请选择生日', trigger: 'change' }
+    {required: true, message: '请选择生日', trigger: 'change'}
   ]
 })
 
@@ -558,6 +574,10 @@ const pagination = reactive({
 
 // 按钮点击处理
 const handleButtonClick = () => {
+  clickCount.value++
+  ElMessage.success(`按钮被点击了 ${clickCount.value} 次！`)
+}
+const abc = () => {
   clickCount.value++
   ElMessage.success(`按钮被点击了 ${clickCount.value} 次！`)
 }
@@ -670,26 +690,26 @@ const showInfoMessage = () => {
 // 显示确认对话框
 const showConfirmDialog = () => {
   ElMessageBox.confirm(
-    '此操作将永久删除该文件, 是否继续?',
-    '警告',
-    {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning',
-    }
+      '此操作将永久删除该文件, 是否继续?',
+      '警告',
+      {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning',
+      }
   )
-    .then(() => {
-      ElMessage({
-        type: 'success',
-        message: '删除成功!',
+      .then(() => {
+        ElMessage({
+          type: 'success',
+          message: '删除成功!',
+        })
       })
-    })
-    .catch(() => {
-      ElMessage({
-        type: 'info',
-        message: '已取消删除',
+      .catch(() => {
+        ElMessage({
+          type: 'info',
+          message: '已取消删除',
+        })
       })
-    })
 }
 
 // 显示输入对话框
@@ -700,18 +720,18 @@ const showPromptDialog = () => {
     inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
     inputErrorMessage: '邮箱格式不正确',
   })
-    .then(({ value }) => {
-      ElMessage({
-        type: 'success',
-        message: `你的邮箱是: ${value}`,
+      .then(({value}) => {
+        ElMessage({
+          type: 'success',
+          message: `你的邮箱是: ${value}`,
+        })
       })
-    })
-    .catch(() => {
-      ElMessage({
-        type: 'info',
-        message: '取消输入',
+      .catch(() => {
+        ElMessage({
+          type: 'info',
+          message: '取消输入',
+        })
       })
-    })
 }
 
 // 显示抽屉
