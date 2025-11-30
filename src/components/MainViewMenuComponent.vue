@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import {Connection, House, Star, DataBoard} from "@element-plus/icons-vue";
+import {Connection, House, Star, DataBoard, User} from "@element-plus/icons-vue";
 </script>
 
 <template>
@@ -63,6 +63,13 @@ import {Connection, House, Star, DataBoard} from "@element-plus/icons-vue";
         <DataBoard/>
       </el-icon>
       <span>Pinia Demo</span>
+    </el-menu-item>
+    <!-- user-management -->
+    <el-menu-item index="/user-management">
+      <el-icon>
+        <User/>
+      </el-icon>
+      <span>用户管理系统</span>
     </el-menu-item>
   </el-menu>
 </template>

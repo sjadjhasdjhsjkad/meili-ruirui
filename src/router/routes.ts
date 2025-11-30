@@ -34,6 +34,12 @@ export const constantRoute = [
         name: 'PiniaDemo',
     },
     {
+        // 用户管理系统演示
+        path: '/user-management',
+        component: () => import('@/views/UserManagement.vue'),
+        name: 'UserManagement',
+    },
+    {
         // 404
         path: '/404',
         component: () => import('@/views/404/index.vue'),
