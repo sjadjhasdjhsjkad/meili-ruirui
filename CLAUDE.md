@@ -31,4 +31,11 @@ This is a Vue 3 + TypeScript + Vite project with the following structure:
 - This project uses Vue 3 Single File Components (SFCs) with TypeScript
 - The template follows Vue 3 best practices using Composition API
 - Vite handles module resolution and hot reloading during development
-- TypeScript compilation is performed as part of the build process using `vue-tsc`% 
+- TypeScript compilation is performed as part of the build process using `vue-tsc`
+
+## File Creation Permissions
+
+**IMPORTANT**: When creating new files, always use guagua user permissions to avoid WebStorm permission issues:
+- Use `sudo -u guagua touch filename.ext` to create files
+- Use `sudo -u guagua tee filename.ext > /dev/null << 'EOF'` to write file content
+- This ensures files are readable and editable in WebStorm IDE 
