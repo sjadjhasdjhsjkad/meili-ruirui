@@ -1,4 +1,5 @@
 import {createApp} from 'vue'
+import {createPinia} from 'pinia'
 import App from './App.vue'
 import router from './router'  // 引入路由配置
 import ElementPlus from 'element-plus'   //引入element-plus  插件
@@ -11,6 +12,10 @@ import '@/styles/style.css'
 // import 'virtual:svg-icons-register';
 
 const app = createApp(App)   //获取应用实例对象
+
+//安装 pinia 状态管理
+const pinia = createPinia()
+app.use(pinia)
 
 //安装路由插件
 app.use(router)
